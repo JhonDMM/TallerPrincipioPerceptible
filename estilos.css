@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #cdebe8;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.mg-bottom-8 {
+    margin-bottom: 8px;
+}
+
+.pd-8 {
+    padding: 8px;
+}
+
+/* {border: 1px solid #ff0000}*/
+
+header {
+    text-align: center;
+    margin: 8px;
+}
+
+.datos-personales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-datos {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    background-color: #eaf1f1;
+    margin: 20px;
+    padding: 20px;
+}
+
+.fotografia img {
+    height: 175px;
+    width: auto;
+    /*border-radius: 50%;*/
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.tabla-referencias {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.experiencia-profesional {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+
+}
+
+.referencias-personales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: left;
+    background-color: #eaf1f1;
+}
+
+th {
+    background-color: cadetblue;
+}
+
+tr:hover {
+    background-color: cadetblue;
+}
+
+.video-virtudes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+video {
+    border: 3px solid #fff;
+}

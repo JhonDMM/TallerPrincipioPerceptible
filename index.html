@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1>Currículo Jhon Maiza</h1>
+    </header>
+
+    <main>
+        <section class="datos-personales">
+            <div class="contenedor-datos">
+                <div>
+                    <h2 class="mg-bottom-8" tabindex="1">Jhon Maiza</h2>
+                    <p class="mg-bottom-8" tabindex="2">Estudiante de Ingenieria de Software</p>
+                    <p class="mg-bottom-8" tabindex="3"> <b>Correo:</b> jhon.maiza@epn.edu.ec</p>
+                    <p class="mg-bottom-8" tabindex="4"> <b>Telefono:</b> 0992662036</p>
+                </div>
+
+                <div class="fotografia">
+                    <img src="imagenes/fotografia_JhonMaiza.jpg" alt="Fotografía personal" tabindex="4">
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="tabla-referencias mg-bottom-8 pd-8">
+            <h3 tabindex="5">Referencia de Estudios</h3>
+            <table tabindex="6" id="miTabla1">
+                <thead>
+                    <tr>
+                        <th tabindex="7">Institución</th>
+                        <th tabindex="8">Lugar</th>
+                        <th tabindex="9">Título</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td tabindex="10">UERS</td>
+                        <td tabindex="11">Quito</td>
+                        <td tabindex="11">Primaria</td>
+                    </tr>
+                    <tr>
+                        <td tabindex="12">U.E. Fernández Madrid</td>
+                        <td tabindex="13">Quito</td>
+                        <td tabindex="14">Bachillerato en Ciencias</td>
+                    </tr>
+                    <tr>
+                        <td tabindex="15">EPN</td>
+                        <td tabindex="16">Quito</td>
+                        <td tabindex="17">Ingenieria en Software</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="experiencia-profesional mg-bottom-8 pd-8">
+            <h3 class=" mg-bottom-8" tabindex="18">Experiencia Profesional</h3>
+            <p tabindex="19">
+                Durante mi tiempo en la universidad, me enfoqué activamente en aplicar mis
+                conocimientos teóricos a través de proyectos prácticos que me permitieron
+                desarrollar habilidades valiosas en desarrollo de Aplicaciones Web. Colaboré en proyectos
+                desafiantes, destacando mi capacidad para trabajar en equipos interdisciplinarios
+                y enfrentar problemas complejos. En diferentes proyectos en la universidad no solo consolide
+                mis habilidades técnicas en distintos lengujes de programación,
+                sino que también mejoró mi capacidad para comunicar ideas de manera efectiva y presentar
+                soluciones a un público diverso. Estas experiencias universitarias han fortalecido mi compromiso
+                con el aprendizaje continuo y mi capacidad para abordar desafíos con creatividad.
+            </p>
+
+        </section>
+
+        <section class="video-virtudes mg-bottom-8">
+            <h3 class=" mg-bottom-8" tabindex="20">Video Virtudes y Motivación</h3>
+            <video width="640" height="360" tabindex="21" controls>
+                <source src="video/videoMotivacion.mp4" type="video/mp4">
+                Tu navegador no soporta el tag de video.
+            </video>
+        </section>
+
+        <section class="referencias-personales pd-8">
+            <h3 class=" mg-bottom-8" tabindex="22">Referencias Personales</h3>
+            <table tabindex="22" id="miTabla2">
+                <thead>
+                    <tr>
+                        <th tabindex="23">Nombre</th>
+                        <th tabindex="24">Teléfono</th>
+                        <th tabindex="25">Cargo</th>
+                        <th tabindex="26">Institucion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td tabindex="27">Jonathan Javier Maiza Mejía</td>
+                        <td tabindex="28">0983471206</td>
+                        <td tabindex="29">Ingeniero de Soporte Técnico</td>
+                        <td tabindex="30">Kuski</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+    <script>
+        function manejarTeclas(event, tabla) {
+            const currentCell = event.target;
+            let nextCell;
+
+            switch (event.key) {
+                case "ArrowRight":
+                    nextCell = currentCell.nextElementSibling;
+                    break;
+                case "ArrowLeft":
+                    nextCell = currentCell.previousElementSibling;
+                    break;
+                case "ArrowDown":
+                    const currentRow = currentCell.parentElement;
+                    const nextRow = currentRow.nextElementSibling;
+                    if (nextRow) {
+                        nextCell = nextRow.cells[currentCell.cellIndex];
+                    }
+                    break;
+                case "ArrowUp":
+                    const previousRow = currentCell.parentElement.previousElementSibling;
+                    if (previousRow) {
+                        nextCell = previousRow.cells[currentCell.cellIndex];
+                    }
+                    break;
+                default:
+                    return;
+            }
+
+            if (nextCell) {
+                nextCell.focus();
+                event.preventDefault();
+            }
+        }
+
+        const tabla1 = document.getElementById("miTabla1");
+        const tabla2 = document.getElementById("miTabla2");
+
+        tabla1.addEventListener("keydown", function (event) {
+            manejarTeclas(event, tabla1);
+        });
+
+        tabla2.addEventListener("keydown", function (event) {
+            manejarTeclas(event, tabla2);
+        });
+    </script>
+
+
+</body>
+
+</html>
